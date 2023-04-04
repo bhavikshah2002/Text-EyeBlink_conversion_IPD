@@ -1,4 +1,5 @@
 from tensorflow.keras.models import load_model
+import tensorflow as tf
 import numpy as np
 import pickle
 modelapna = load_model('model.h5')
@@ -13,4 +14,4 @@ def make_predictions(text, n_words):
         text += " " + prediction
     return text
 
-print(make_predictions('hate',2))
+print(make_predictions('crime',2))
