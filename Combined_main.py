@@ -10,10 +10,14 @@ def call_GUI2():
     os.system('python ./EyeBlink/eye_blink_Morse.py --shape-predictor ./EyeBlink/shape_predictor_68_face_landmarks.dat')
     return
 
+def call_GUI3():
+    os.system('python eyeBlinkPassword.py')
+    return
+
 if __name__ == "__main__":
     window = Tk()
     window.title("Bridge of Morse Code")
-    window.config(padx=275, pady=100)    
+    window.config(padx=275, pady=75)    
     
     heading = Label(text="Bridge of Morse Code", font=(FONT_NAME, 50, "bold"))
     heading.grid(row=0, column=1)
@@ -35,6 +39,16 @@ if __name__ == "__main__":
     button_gui_2 = Button(text="Enter", background='grey',  highlightthickness=0, height=3, width=15,
                         font=(FONT_NAME, 12, "bold"), command=call_GUI2)
     button_gui_2.grid(row=7, column=1)
+
+    extra3 = Label(text="", font=(FONT_NAME, 32, "normal"))
+    extra3.grid(row=8, column=1)
+
+    label_gui_2 = Label(text="3. Password Encryption:", font=(FONT_NAME, 32, "normal"))
+    label_gui_2.grid(row=9, column=1)
+    button_gui_2 = Button(text="Enter", background='grey',  highlightthickness=0, height=3, width=15,
+                        font=(FONT_NAME, 12, "bold"), command=call_GUI3)
+    button_gui_2.grid(row=10, column=1)
+
     window.bind("<Escape>", lambda event:window.destroy())
     window.state('zoomed')
     window.mainloop()
